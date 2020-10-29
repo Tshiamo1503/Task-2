@@ -16,7 +16,7 @@ namespace Task1
         public enum Movement { Nothing = 0, left, right, up, down }
 
         public Character(int x,int y,char symbol)
-            :base(x,y,Character.TileType.Hero)
+            :base(x,y)
         {
             this.x = x;
             this.y = y;

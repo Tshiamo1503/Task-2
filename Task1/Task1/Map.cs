@@ -11,10 +11,11 @@ namespace Task1
         private char[,] Maptiles;
         Hero hero;
         private Enemy[] enemies;
+        private Item[] Items;
         private int width, height;
         private Random randomize = new Random();
 
-        public Map(int minWidth, int maxWidth, int minHeight, int maxHeight,int numEnemies)
+        public Map(int minWidth, int maxWidth, int minHeight, int maxHeight,int numEnemies,int goldamount)
         {
             this.width = randomize.Next(minWidth, maxWidth + 1);
             this.height = randomize.Next(minHeight, maxHeight + 1);
@@ -23,8 +24,23 @@ namespace Task1
 
             Create();//hero
 
+            for (int i = 0; i < goldamount; i++)
+            {
+                Create();/////////=================for gold
+            }
+
             for (int i = 0; i < enemies.Length; i++)
             {
+                char symbl;
+                int enemytype = randomize.Next(0,2);
+                switch (enemytype)
+                {
+                    case 0: symbl = 'G';
+                        break;
+
+                    case 1: symbl = 'M';
+                        break;
+                }
                 Create();//enemy
             }
 

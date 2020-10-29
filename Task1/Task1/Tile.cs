@@ -15,7 +15,7 @@ namespace Task1
             Hero, Enemy, Gold, Weapon
         }
 
-        public Tile(int xval, int yval, TileType Character)
+        public Tile(int xval, int yval)
         {
             this.x = xval;
             this.y = yval;
@@ -29,7 +29,7 @@ namespace Task1
         class Obstacle: Tile
         {
         public Obstacle(int xpos, int ypos, TileType TileObject)
-                : base(xpos, ypos, TileObject)
+                : base(xpos, ypos)
         {
 
         }
@@ -39,7 +39,7 @@ namespace Task1
         class EmptyTile: Tile
         {
         public EmptyTile(int x, int y, TileType ObjTile)
-                : base(x, y, ObjTile)
+                : base(x, y)
         {
 
         }
