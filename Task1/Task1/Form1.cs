@@ -58,5 +58,12 @@ namespace Task1
 
             Savegame.Save();
         }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            GameEngine Savegame = new GameEngine();
+
+            Savegame.Load();
+        }
     }
 }

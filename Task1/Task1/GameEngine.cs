@@ -52,7 +52,7 @@ namespace Task1
 
             if (File.Exists("Map Data"))
             {
-                Stream stream = File.Open("Map Data", FileMode.Open);
+                Stream stream = File.Open("Map-Data.dat", FileMode.Open);
                 BinaryFormatter Bin = new BinaryFormatter();
 
                 Bin.Serialize(stream, mapDisplay);
@@ -60,7 +60,7 @@ namespace Task1
             }
             else
             { 
-            Stream stream = File.Open("Map Data", FileMode.Create);
+            Stream stream = File.Open("Map-Data.dat", FileMode.Create);
             BinaryFormatter Bin = new BinaryFormatter();
 
             Bin.Serialize(stream, mapDisplay);
@@ -77,6 +77,17 @@ namespace Task1
         public GameEngine(SerializationInfo info, StreamingContext context)
         {
             mapDisplay = (Map)info.GetValue("Map-Display", typeof(Map));
+        }
+
+        public void Load()
+        {
+            mapDisplay = null;
+
+            Stream stream = File.Open("Map-Data.dat", FileMode.Open);
+            BinaryFormatter Bin = new BinaryFormatter();
+
+            mapDisplay = (Map)Bin.Deserialize(stream);
+            stream.Close();
         }
     }
 }
