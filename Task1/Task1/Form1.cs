@@ -51,5 +51,12 @@ namespace Task1
         {
             Game.MovePlayer(Character.Movement.right);
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            GameEngine Savegame = new GameEngine();
+
+            Savegame.Save();
+        }
     }
 }

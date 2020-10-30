@@ -21,6 +21,7 @@ namespace Task1
             this.height = randomize.Next(minHeight, maxHeight + 1);
             this.Maptiles = new char[height,width];
             this.enemies = new Enemy[numEnemies];
+            this.Items = new Item[goldamount];
 
             Create();//hero
 
@@ -51,6 +52,7 @@ namespace Task1
         public int Height { get => height; set => height = value; }
         public Random Randomize { get => randomize; set => randomize = value; }
         internal Enemy[] Enemies { get => enemies; set => enemies = value; }
+        internal Item[] Items1 { get => Items; set => Items = value; }
 
         public void Create()
         {
@@ -62,11 +64,20 @@ namespace Task1
 
         }
 
-       /* private Tile Create(Tile.TileType type)
+        /* private Tile Create(Tile.TileType type)
+         {
+             return;
+         }*/
+
+       /* public Item GetItemAtPosition(int x, int y)//================ getitem method
         {
-            return;
+            for (int i = 0; i < Items.Length; i++)
+            {
+
+            }
+
+            Item ITEM= new Item(x,y);
+            return ITEM;
         }*/
-
-
     }
 }

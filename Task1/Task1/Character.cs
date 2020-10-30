@@ -110,5 +110,17 @@ namespace Task1
         }
 
         public abstract override string ToString();
+
+        public void Pickup(Item i)//================= still need to finish
+        {
+            switch (i)
+            {
+                //case :
+                  //  break;
+                default:
+                    break;
+            }
+        }
+
     }
 }
